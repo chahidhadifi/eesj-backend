@@ -59,9 +59,6 @@ public class Medecin {
     @CollectionTable(name = "experience", joinColumns = @JoinColumn(name = "medecin_id"))
     private List<Experience> experiences;
 
-    @Column(name = "evaluation", columnDefinition = "INTEGER DEFAULT 0")
-    private Integer evaluation;
-
     @OneToMany(mappedBy = "medecin", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Jeune> patients;
 }

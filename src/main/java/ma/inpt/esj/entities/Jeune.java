@@ -56,7 +56,7 @@ public class Jeune {
     @JoinColumn(name = "info_user_id")
     private InfoUser infoUser;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "medecin_id")
     private Medecin medecin;
 }
